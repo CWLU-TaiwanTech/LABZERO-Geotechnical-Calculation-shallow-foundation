@@ -1,26 +1,293 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GeoMaster Pro｜單淺基礎承載力智慧分析</title>
+<title>LABZero GeoCalc | Multilingual Geotechnical Calculation Platform</title>
+<meta name="description" content="LABZero-style multilingual geotechnical calculation website for foundation bearing capacity, RC footing design, settlement, liquefaction, seepage, and project reports." />
 <style>
-:root{--blue:#1478c8;--blue2:#0b5fa5;--cyan:#10b7c7;--green:#19a56b;--red:#cc3d3d;--orange:#b86b00;--line:#8ec5ff;--soft:#eef7ff;--ink:#243444;--muted:#677786;--bg:#f7fafc;--panel:#fff}*{box-sizing:border-box}body{margin:0;font-family:"Times New Roman","Microsoft JhengHei",Arial,sans-serif;background:var(--bg);color:var(--ink)}.top{height:58px;background:linear-gradient(90deg,#fff,#f4f4f4);display:flex;align-items:center;padding:0 24px;border-bottom:1px solid #ddd}.top h1{margin:0;color:#0b6faa;font-size:30px;font-weight:900}.pro{font-size:14px;background:#2aaa4a;color:white;border-radius:4px;padding:1px 5px;margin-left:6px}.actions-top{margin-left:auto;display:flex;gap:10px}.circle{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle,#e8f6ff,#66b8ff);border:2px solid #1890ff;display:grid;place-items:center;color:#0870ce;font-size:24px;font-weight:900}.wrap{max-width:1380px;margin:auto;padding:18px 24px 80px}.grid-main{display:grid;grid-template-columns:minmax(760px,1fr) 460px;gap:28px;align-items:start}.section{background:white;border-radius:8px;margin:18px 0;padding:0 0 16px;border:1px solid #e4eef6}.sec-title{display:flex;align-items:center;gap:8px;color:#00a89d;font-size:23px;font-weight:900;padding:12px 18px 8px;border-bottom:2px solid #4da3ff}.ico{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#eaffd6,#05a85c);border:2px solid #078ad4;display:grid;place-items:center;color:white;font-size:14px}.form-row{display:grid;grid-template-columns:260px 70px 1fr 70px;gap:10px;align-items:center;padding:4px 30px;font-size:22px}.eq{text-align:center;color:#333}.unit{text-align:right;color:#333}input,select,textarea{border:1.8px solid #58a7ff;background:#fbfdff;min-height:32px;padding:4px 8px;font-size:20px;color:#333}select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#333 50%),linear-gradient(135deg,#333 50%,transparent 50%);background-position:calc(100% - 20px) 12px,calc(100% - 10px) 12px;background-size:10px 10px;background-repeat:no-repeat}.checkrow{display:grid;grid-template-columns:330px 1fr;gap:10px;padding:6px 30px;font-size:21px}.checkrow label{display:block;margin:6px 0}input[type="checkbox"],input[type="radio"]{width:18px;height:18px;min-height:auto;margin-right:8px;accent-color:#0b8de3}.more{float:right;margin-left:8px;border:1px solid #1890ff;border-radius:15px;background:#e9f6ff;color:#0b78cc;padding:0 13px}.layer-table{padding:0 30px;margin-top:8px}table{width:100%;border-collapse:collapse;font-size:18px;background:#fff}th,td{border:1.5px solid #58a7ff;padding:5px;text-align:center}th{background:#eaf5ff;font-weight:500}td input,td select{width:100%;border:0;background:#fffdf5;text-align:center}td.gray input{background:#eee}.design-info{display:grid;grid-template-columns:260px 1fr;gap:8px;padding:6px 32px;font-size:21px}.design-info input,.design-info textarea{width:330px}.design-info textarea{height:165px}.output-row{display:grid;grid-template-columns:330px 1fr;gap:12px;padding:5px 32px;font-size:21px}.indent{margin-left:28px;color:#1478c8}.btn{border:0;border-radius:5px;background:linear-gradient(#23a6f2,#0b67b0);color:white;font-weight:900;font-size:20px;padding:9px 18px;cursor:pointer;box-shadow:0 3px 0 #084b83}.btn.secondary{background:linear-gradient(#28c58e,#129660);box-shadow:0 3px 0 #0e6f47}.btn.danger{background:linear-gradient(#ff7777,#c93d3d);box-shadow:0 3px 0 #932b2b}.sticky-panel{position:sticky;top:15px}.figure-card,.result-card{background:white;border:1px solid #dbe8f5;border-radius:10px;margin:18px 0;padding:16px}.figure-title{font-size:18px;color:#345;display:flex;justify-content:space-between}svg{width:100%;height:auto}.result-card h3{margin:0 0 10px;color:#0b6faa;font-size:24px}.result{white-space:pre-wrap;background:#f5fbff;border-left:5px solid var(--blue);padding:12px;border-radius:7px;font-size:17px;line-height:1.5}.status{display:inline-block;border-radius:20px;padding:4px 12px;font-weight:900;font-size:15px}.ok{background:#e1f6ec;color:#14865c}.warn{background:#fff1d7;color:#a26000}.bad{background:#ffe2e2;color:#bd3030}.smart-list{font-size:17px;line-height:1.6;padding-left:18px}.report{width:100%;height:280px;font-size:15px;font-family:Consolas,monospace}.footer-actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}@media(max-width:1180px){.grid-main{grid-template-columns:1fr}.sticky-panel{position:static}.form-row{grid-template-columns:1fr}.eq,.unit{text-align:left}}
+:root{
+  --zero:#071a24; --zero2:#0d2c3a; --teal:#20c7b5; --cyan:#58e0ff; --gold:#e9b44c;
+  --ink:#10202d; --muted:#657789; --line:#dce8ef; --soft:#f4f9fb; --white:#fff;
+  --ok:#18a36b; --warn:#b87300; --bad:#cc4141; --shadow:0 22px 60px rgba(7,26,36,.18);
+  --r:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f4f8fb;color:var(--ink);font-family:Inter,"Segoe UI",Arial,"Microsoft JhengHei",sans-serif;line-height:1.58}
+button,input,select,textarea{font:inherit}
+a{text-decoration:none;color:inherit}
+.top{
+  position:sticky;top:0;z-index:50;background:rgba(7,26,36,.92);backdrop-filter:blur(14px);
+  color:white;border-bottom:1px solid rgba(255,255,255,.1)
+}
+.nav{max-width:1280px;margin:auto;padding:14px 22px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center;font-weight:950}
+.logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--teal),var(--cyan));display:grid;place-items:center;color:#06202a;font-weight:950}
+.brand small{display:block;color:#9bc0cc;font-weight:700;font-size:12px}
+.links{display:flex;gap:18px;color:#c8dce4;font-weight:800;font-size:14px}
+.lang{display:flex;gap:7px}
+.lang button{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:white;border-radius:999px;padding:8px 10px;font-weight:900;cursor:pointer}
+.lang button.active{background:var(--teal);color:#032029}
+.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.primary{background:linear-gradient(135deg,var(--teal),#0aa3aa);color:#04191f;box-shadow:0 12px 28px rgba(32,199,181,.24)}
+.btn.dark{background:#0b2532;color:white}.btn.soft{background:#e7fbfb;color:#075861}.btn.white{background:white;color:#0c6270;border:1px solid var(--line)}
+.hero{
+  color:white;background:
+  radial-gradient(circle at 10% 18%,rgba(32,199,181,.32),transparent 28%),
+  radial-gradient(circle at 88% 8%,rgba(233,180,76,.18),transparent 25%),
+  linear-gradient(135deg,#071a24 0%,#0d2c3a 62%,#06131a 100%);
+  overflow:hidden
+}
+.hero .inner{max-width:1280px;margin:auto;padding:76px 22px 58px;display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center}
+.eyebrow{display:inline-flex;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);color:#cffff7;font-weight:950;font-size:13px}
+h1{font-size:58px;line-height:1.02;letter-spacing:-2px;margin:18px 0}
+.lead{font-size:19px;color:#c9dde4;max-width:780px;margin:0 0 26px}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:15px}
+.kpi b{display:block;font-size:25px;color:white}.kpi span{font-size:13px;color:#a9c5d0}
+.labcard{background:rgba(255,255,255,.96);color:var(--ink);border-radius:32px;box-shadow:var(--shadow);overflow:hidden}
+.labhead{height:48px;background:#eef7f8;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;padding:0 16px}
+.dot{width:10px;height:10px;border-radius:50%;background:#95aebb}
+.labbody{padding:20px}
+.status{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px;border:1px solid var(--line);border-radius:16px;margin:10px 0;background:#fbfdff}
+.badge{border-radius:999px;padding:5px 9px;font-size:12px;font-weight:950}
+.ok{background:#e1f6ec;color:var(--ok)}.warn{background:#fff0d2;color:var(--warn)}.bad{background:#ffe1e1;color:var(--bad)}
+.section{padding:54px 22px}.container{max-width:1280px;margin:auto}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#0b8290;font-weight:950}
+h2{font-size:40px;line-height:1.12;letter-spacing:-1px;margin:8px 0 14px}.section .lead{color:var(--muted)}
+.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.pillar{background:white;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 10px 28px rgba(7,26,36,.06)}
+.pillar .num{color:var(--teal);font-weight:950}.pillar h3{margin:8px 0 6px}.pillar p{color:var(--muted);font-size:14px;margin:0}
+.workspace{display:grid;grid-template-columns:310px 1fr;gap:20px;align-items:start}
+.tools{position:sticky;top:88px;background:white;border:1px solid var(--line);border-radius:26px;padding:14px;box-shadow:0 12px 34px rgba(7,26,36,.08)}
+.tool{width:100%;border:0;background:transparent;text-align:left;padding:13px 12px;border-radius:15px;font-weight:950;color:#2f4858;cursor:pointer;display:flex;justify-content:space-between}
+.tool.active{background:#e7fbfb;color:#06747a}
+.solver{display:none;background:white;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}.solver.active{display:block}
+.solverHead{padding:22px 24px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fff,#f7fbfc)}
+.solverHead h3{font-size:28px;margin:0 0 6px}.hint{margin:0;color:var(--muted);font-size:14px}
+.solverBody{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:22px}
+.diagram{background:#f8fbfd;border:1px solid var(--line);border-radius:22px;padding:16px}svg{width:100%;height:auto}
+.form{background:#fbfdff;border:1px solid var(--line);border-radius:22px;padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+label{font-size:13px;font-weight:950;color:#344a59}input,select,textarea{width:100%;margin-top:6px;padding:12px 13px;border:1px solid #d2e0e8;border-radius:13px;background:white;color:var(--ink)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 4px}.result{margin-top:16px;background:#f5f9fb;border:1px solid var(--line);border-left:6px solid var(--teal);border-radius:18px;padding:16px;white-space:pre-wrap;min-height:135px}
+.theory{margin-top:16px;background:#fffaf1;border:1px solid #f0d7a5;border-radius:18px;padding:16px;font-size:14px}.theory code{display:block;background:white;border:1px solid #ead6ab;border-radius:12px;padding:10px;margin-top:8px;white-space:pre-wrap}
+.tableWrap{background:white;border:1px solid var(--line);border-radius:22px;padding:12px;overflow:auto}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;font-size:14px}th{background:#f3f8fb}
+.reportGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}textarea.report{min-height:360px;font-family:Consolas,monospace;font-size:13px}
+.footer{background:#071a24;color:#9eb8c4;text-align:center;padding:34px 22px}
+@media(max-width:1100px){.links{display:none}.hero .inner,.workspace,.solverBody,.reportGrid{grid-template-columns:1fr}.tools{position:relative;top:auto}.pillars,.kpis{grid-template-columns:1fr 1fr}h1{font-size:42px}}
+@media(max-width:640px){.pillars,.kpis,.grid{grid-template-columns:1fr}.nav{flex-wrap:wrap}}
 </style>
 </head>
 <body>
-<header class="top"><h1>單淺基礎承載力智慧分析<span class="pro">PRO</span></h1><div class="actions-top"><div class="circle">i</div><div class="circle">□</div><div class="circle">?</div></div></header>
-<div class="wrap"><div class="grid-main"><main>
-<section class="section"><div class="sec-title"><span class="ico">◆</span>基礎分析規範及尺寸</div><div class="form-row"><div>分析項目</div><div></div><select id="projectType"><option>單淺基礎承載力分析</option><option>偏心載重基礎承載力分析</option><option>層狀地層基礎承載力分析</option></select><span class="pro">NEW</span></div><div class="form-row"><div>建築物基礎構造設計規範</div><div></div><select id="code"><option>TWN-112(2023)</option><option>自訂規範</option><option>ASCE/AASHTO conceptual check</option></select><div></div></div><div class="form-row"><div>淺基礎形式</div><div></div><select id="foundationType"><option>獨立基腳</option><option>連續基腳</option><option>筏式基礎</option><option>矩形基礎</option></select><div></div></div><div class="form-row"><div>基礎深度</div><div class="eq">D<sub>f</sub> =</div><input id="Df" type="number" value="1.5" step="0.1"><div class="unit">(m)</div></div><div class="form-row"><div>寬度 x 向</div><div class="eq">L<sub>x</sub> =</div><input id="Lx" type="number" value="2.0" step="0.1"><div class="unit">(m)</div></div><div class="form-row"><div>寬度 y 向</div><div class="eq">L<sub>y</sub> =</div><input id="Ly" type="number" value="2.0" step="0.1"><div class="unit">(m)</div></div></section>
-<section class="section"><div class="sec-title"><span class="ico">◆</span>分析條件</div><div class="form-row"><div>長期載重承載安全係數</div><div class="eq">FS<sub>b1</sub> =</div><input id="FSb1" type="number" value="3.0" step="0.1"><div></div></div><div class="form-row"><div>短期載重承載安全係數</div><div class="eq">FS<sub>b2</sub> =</div><input id="FSb2" type="number" value="2.0" step="0.1"><div></div></div><div class="form-row"><div>極限限界承載安全係數</div><div class="eq">FS<sub>b3</sub> =</div><input id="FSb3" type="number" value="1.1" step="0.1"><div></div></div><div class="form-row"><div>支承力因數計算法</div><div></div><select id="factorMethod"><option>基礎構造設計規範</option><option>Terzaghi</option><option>Meyerhof-like shape correction</option></select><div></div></div><div class="checkrow"><div>外力及偏心之影響</div><div><label><input id="eccCheck" type="checkbox">考慮外力作用及基礎偏心 <button class="more">...</button></label></div></div><div id="eccBox" style="display:none"><div class="form-row"><div>垂直載重</div><div class="eq">P =</div><input id="Pload" type="number" value="600"><div class="unit">(kN)</div></div><div class="form-row"><div>x 向偏心</div><div class="eq">e<sub>x</sub> =</div><input id="ex" type="number" value="0.0" step="0.01"><div class="unit">(m)</div></div><div class="form-row"><div>y 向偏心</div><div class="eq">e<sub>y</sub> =</div><input id="ey" type="number" value="0.0" step="0.01"><div class="unit">(m)</div></div></div><div class="checkrow"><div>層狀地層計算法</div><div><label><input name="layerMethod" type="radio" value="none" checked>不考慮層狀地層 <button class="more">...</button></label><label><input name="layerMethod" type="radio" value="punch">基礎穿剪下方地層</label><label><input name="layerMethod" type="radio" value="soft">荷重分散傳遞至下方(軟弱)地層</label><label><input name="layerMethod" type="radio" value="average">採用基礎下方地層平均參數</label></div></div><div class="checkrow"><div>進行 RC 設計</div><div><label><input id="rcDesign" type="checkbox">基腳 RC 設計</label></div></div></section>
-<section class="section"><div class="sec-title"><span class="ico">▣</span>地層及地下水</div><div class="form-row"><div>地下水位深度</div><div class="eq">D<sub>w</sub> =</div><input id="Dw" type="number" value="0" step="0.1"><div class="unit">(m)</div></div><div class="form-row"><div>地層數目</div><div></div><select id="nLayers" onchange="buildLayers()"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div></div></div><div class="layer-table"><table id="layerTable"><thead><tr><th rowspan="2">No</th><th colspan="9">地層參數</th></tr><tr><th>地層代號</th><th>地層類型</th><th>Depth<br>(m)</th><th>γ<sub>t</sub><br>(tf/m³)</th><th>c'<br>(tf/m²)</th><th>φ'<br>(deg.)</th><th>S<sub>u</sub><br>(tf/m²)</th><th>SPT-N</th><th>q<sub>u</sub><br>(tf/m²)</th></tr></thead><tbody></tbody></table></div></section>
-<section class="section"><div class="sec-title"><span class="ico">i</span>設計資訊</div><div class="design-info"><div>計畫名稱</div><input id="projName" value="示範工程"></div><div class="design-info"><div>計畫編號</div><input id="projNo" value="GEO-001"></div><div class="design-info"><div>設計人員</div><input id="designer" value="CW LU"></div><div class="design-info"><div>設計說明</div><textarea id="desc">單淺基礎承載力初步分析，含地下水、偏心、層狀土與安全係數檢核。</textarea></div></section>
-<section class="section"><div class="sec-title"><span class="ico">⚙</span>計算書設定</div><div class="output-row"><div>計算書輸出檔名</div><div><label><input name="fileNameMode" type="radio" checked>使用預設檔名</label><label><input name="fileNameMode" type="radio">使用自訂檔名</label><div class="indent">輸出檔名 <input id="fileName" style="width:230px" value="foundation_bearing.xls"></div></div></div><div class="output-row"><div>計算書標題設定</div><div><label><input name="titleMode" type="radio">不使用標題</label><label><input name="titleMode" type="radio" checked>使用預設標題</label><label><input name="titleMode" type="radio">使用自訂標題</label><div class="indent">計畫名稱 <input id="titleProject" style="width:230px"></div><div class="indent">主　　題 <input id="titleSubject" style="width:230px"></div></div></div></section>
-<div class="footer-actions"><button class="btn" onclick="calculateAll()">智慧計算</button><button class="btn secondary" onclick="generateReport()">產生計算書</button><button class="btn secondary" onclick="downloadReport()">下載報告 TXT</button><button class="btn danger" onclick="resetDemo()">重設示範值</button></div></main>
-<aside class="sticky-panel"><section class="figure-card"><div class="figure-title"><b>即時基礎尺寸與側視圖</b><span id="viewNote">[ 側視 / 俯視 ]</span></div><svg id="foundationSvg" viewBox="0 0 520 460"><rect width="520" height="460" fill="#fbfdff"/><defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 L8 0" stroke="#999" stroke-width="1"/></pattern><marker id="arr" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#cc3d3d"/></marker><linearGradient id="gradFoot" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#eee"/><stop offset="100%" stop-color="#bbb"/></linearGradient></defs><text x="20" y="28" fill="#3333aa" font-size="18">[ 側視 ]</text><rect x="60" y="55" width="360" height="40" fill="url(#hatch)" opacity=".45"/><line x1="60" y1="92" x2="420" y2="92" stroke="#3355ff" stroke-width="2"/><line id="waterLine" x1="60" y1="92" x2="420" y2="92" stroke="#3355ff" stroke-width="2"/><rect id="colSide" x="230" y="35" width="70" height="115" fill="#ddd" stroke="#777"/><rect id="footSide" x="150" y="150" width="230" height="45" fill="url(#gradFoot)" stroke="#555"/><line id="dfLine" x1="42" y1="55" x2="42" y2="195" stroke="#2c9b37" stroke-width="2"/><text id="dfTxt" x="24" y="135" fill="#c33" font-size="20">Df</text><text id="dwTxt" x="430" y="87" fill="#c33" font-size="20">Dw</text><text x="405" y="180" fill="#c33" font-size="20">H</text><text x="20" y="255" fill="#3333aa" font-size="18">[ 俯視 ]</text><rect id="planFoot" x="95" y="275" width="230" height="130" fill="#ddd" stroke="#555"/><rect id="planCol" x="185" y="315" width="55" height="45" fill="url(#hatch)" stroke="#777"/><line x1="95" y1="420" x2="325" y2="420" stroke="#2c9b37"/><text id="lxTxt" x="195" y="448" fill="#c33" font-size="20">Lx</text><line x1="70" y1="275" x2="70" y2="405" stroke="#2c9b37"/><text id="lyTxt" x="45" y="350" fill="#c33" font-size="20">Ly</text><line id="exArrow" x1="212" y1="338" x2="240" y2="338" stroke="#c33" stroke-width="3" marker-end="url(#arr)"/><line id="eyArrow" x1="212" y1="338" x2="212" y2="365" stroke="#c33" stroke-width="3" marker-end="url(#arr)"/><text x="244" y="337" fill="#c33" font-size="17">eₓ</text><text x="218" y="382" fill="#c33" font-size="17">eᵧ</text></svg></section><section class="result-card"><h3>智慧計算結果</h3><div id="resultBox" class="result">請輸入資料後按「智慧計算」。</div><ul class="smart-list" id="smartList"></ul></section><section class="result-card"><h3>計算書預覽</h3><textarea id="report" class="report"></textarea></section></aside></div></div>
+<header class="top">
+  <nav class="nav">
+    <a class="brand" href="#home"><span class="logo">0</span><span>LABZero GeoCalc<small data-i18n="brandSub">Soil Dynamics × Geo-Hazard Calculation</small></span></a>
+    <div class="links"><a href="#mission" data-i18n="navMission">Mission</a><a href="#modules" data-i18n="navModules">Modules</a><a href="#workspace" data-i18n="navWorkspace">Workspace</a><a href="#report" data-i18n="navReport">Report</a></div>
+    <div class="lang"><button class="active" onclick="setLang('en',this)">EN</button><button onclick="setLang('zh',this)">中文</button><button onclick="setLang('ja',this)">日本語</button><button onclick="setLang('vi',this)">VI</button></div>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="inner">
+    <div>
+      <span class="eyebrow" data-i18n="eyebrow">Analysis and Risk Mitigation for Geo-Hazards</span>
+      <h1 data-i18n="heroTitle">From soil failure to calculation-driven urban resilience.</h1>
+      <p class="lead" data-i18n="heroLead">A LABZero-style multilingual geotechnical calculation platform integrating field parameters, transparent theory, engineering checks, visual interpretation, and report-ready outputs.</p>
+      <div class="heroActions"><button class="btn primary" onclick="go('workspace')" data-i18n="start">Start Calculation</button><button class="btn white" onclick="go('report')" data-i18n="reportBtn">Generate Report</button></div>
+      <div class="kpis"><div class="kpi"><b>4</b><span data-i18n="k1">languages</span></div><div class="kpi"><b>6+</b><span data-i18n="k2">calculation engines</span></div><div class="kpi"><b>SVG</b><span data-i18n="k3">engineering diagrams</span></div><div class="kpi"><b>CSV/TXT</b><span data-i18n="k4">exports</span></div></div>
+    </div>
+    <div class="labcard"><div class="labhead"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="labbody">
+      <div class="status"><b data-i18n="s1">Foundation bearing</b><span class="badge ok">OK</span></div>
+      <div class="status"><b data-i18n="s2">RC footing</b><span class="badge warn">Review</span></div>
+      <div class="status"><b data-i18n="s3">Liquefaction</b><span class="badge warn">Screen</span></div>
+      <div class="status"><b data-i18n="s4">Seepage / uplift</b><span class="badge ok">Stable</span></div>
+      <div class="status"><b data-i18n="s5">Project report</b><span class="badge ok">Ready</span></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="section" id="mission">
+  <div class="container">
+    <div class="kicker" data-i18n="missionK">LABZero philosophy</div>
+    <h2 data-i18n="missionT">Theory × Practice × Worldwide impact.</h2>
+    <p class="lead" data-i18n="missionP">The interface follows the LABZero spirit: turn geotechnical mechanisms, site evidence, numerical thinking, and public-safety decisions into usable engineering intelligence.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="num">01</div><h3 data-i18n="p1">Bearing & RC</h3><p data-i18n="p1p">Foundation capacity and footing reinforcement.</p></div>
+      <div class="pillar"><div class="num">02</div><h3 data-i18n="p2">Liquefaction</h3><p data-i18n="p2p">CSR/CRR-based screening and mitigation notes.</p></div>
+      <div class="pillar"><div class="num">03</div><h3 data-i18n="p3">Settlement</h3><p data-i18n="p3p">Serviceability and deformation-focused design.</p></div>
+      <div class="pillar"><div class="num">04</div><h3 data-i18n="p4">Seepage</h3><p data-i18n="p4p">Quick condition, uplift, and hydraulic risk.</p></div>
+      <div class="pillar"><div class="num">05</div><h3 data-i18n="p5">Reports</h3><p data-i18n="p5p">Decision-oriented calculation summaries.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="modules">
+  <div class="container">
+    <div class="kicker" data-i18n="moduleK">Calculation modules</div>
+    <h2 data-i18n="moduleT">World-class structure, practical engineering depth.</h2>
+    <p class="lead" data-i18n="moduleP">The current version includes fully working browser-based calculations. It is designed for preliminary design, teaching, proposal support, and project communication.</p>
+  </div>
+</section>
+
+<section class="section" id="workspace">
+  <div class="container">
+    <div class="kicker" data-i18n="workK">Workspace</div>
+    <h2 data-i18n="workT">Visual engineering calculation workspace</h2>
+    <div class="workspace">
+      <aside class="tools">
+        <button class="tool active" data-tool="bearing"><span data-i18n="tool1">Foundation bearing + RC footing</span><span>›</span></button>
+        <button class="tool" data-tool="settlement"><span data-i18n="tool2">Immediate settlement</span><span>›</span></button>
+        <button class="tool" data-tool="liquefaction"><span data-i18n="tool3">Liquefaction screening</span><span>›</span></button>
+        <button class="tool" data-tool="seepage"><span data-i18n="tool4">Seepage / quick condition</span><span>›</span></button>
+      </aside>
+
+      <div>
+        <section class="solver active" id="bearing">
+          <div class="solverHead"><h3 data-i18n="bearingT">Foundation Bearing + RC Footing Design</h3><p class="hint" data-i18n="bearingH">Checks bearing capacity, eccentric effective area, RC flexure, one-way shear, punching shear, and reinforcement.</p></div>
+          <div class="solverBody">
+            <div>
+              <div class="diagram">
+                <svg viewBox="0 0 620 520">
+                  <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 L8 0" stroke="#8b9aa3"/></pattern></defs>
+                  <rect width="620" height="520" fill="#f8fbfd"/>
+                  <text x="28" y="32" fill="#176c88" font-size="18">[ Side / Plan ]</text>
+                  <rect x="70" y="58" width="420" height="42" fill="url(#hatch)" opacity=".3"/>
+                  <line x1="70" y1="98" x2="490" y2="98" stroke="#3355ff" stroke-width="2"/>
+                  <rect x="260" y="38" width="70" height="120" fill="#ddd" stroke="#555"/>
+                  <rect x="165" y="158" width="260" height="55" fill="#d9d9d9" stroke="#555"/>
+                  <line x1="182" y1="200" x2="408" y2="200" stroke="#c33" stroke-width="4" stroke-dasharray="7 6"/>
+                  <text x="437" y="92" fill="#c33" font-size="18">Dw</text>
+                  <text x="135" y="182" fill="#c33" font-size="18">H</text>
+                  <rect x="110" y="300" width="360" height="160" fill="#fff8ed" stroke="#555"/>
+                  <g id="barsA"></g><g id="barsB"></g>
+                  <rect x="260" y="355" width="60" height="48" fill="url(#hatch)" stroke="#555"/>
+                  <text x="230" y="488" fill="#0b8290" font-size="18" id="footDim">Lx × Ly</text>
+                </svg>
+              </div>
+              <div class="theory"><b data-i18n="theory">Theory</b><code>qult = cNc + qNq + 0.5γBNγ
+FS = qult / qservice
+Mu = qu l² / 2
+As = Mu / (φ fy jd)
+One-way shear and punching shear are checked by simplified strength design.</code></div>
+            </div>
+            <div class="form">
+              <div class="grid">
+                <label data-i18n="Lx">Footing width Lx (m)<input id="Lx" type="number" value="2.5" step="0.1"></label>
+                <label data-i18n="Ly">Footing width Ly (m)<input id="Ly" type="number" value="2.2" step="0.1"></label>
+                <label data-i18n="Df">Foundation depth Df (m)<input id="Df" type="number" value="1.5" step="0.1"></label>
+                <label data-i18n="H">Footing thickness H (m)<input id="H" type="number" value="0.6" step="0.05"></label>
+                <label data-i18n="Cx">Column width Cx (m)<input id="Cx" type="number" value="0.5" step="0.05"></label>
+                <label data-i18n="Cy">Column width Cy (m)<input id="Cy" type="number" value="0.5" step="0.05"></label>
+                <label data-i18n="ex">Eccentricity ex (m)<input id="ex" type="number" value="0.0" step="0.01"></label>
+                <label data-i18n="ey">Eccentricity ey (m)<input id="ey" type="number" value="0.0" step="0.01"></label>
+                <label data-i18n="Pserv">Service load P (tf)<input id="Pserv" type="number" value="80"></label>
+                <label data-i18n="Pult">Ultimate load Pu (tf)<input id="Pult" type="number" value="120"></label>
+                <label data-i18n="gamma">Unit weight γ (tf/m³)<input id="gamma" type="number" value="1.8" step="0.01"></label>
+                <label data-i18n="c">Cohesion c' (tf/m²)<input id="cohesion" type="number" value="1.0" step="0.1"></label>
+                <label data-i18n="phi">Friction angle φ' (deg)<input id="phi" type="number" value="30"></label>
+                <label data-i18n="Dw">Groundwater depth Dw (m)<input id="Dw" type="number" value="0" step="0.1"></label>
+                <label data-i18n="fc">Concrete f'c (kgf/cm²)<input id="fc" type="number" value="210"></label>
+                <label data-i18n="fy">Steel fy (kgf/cm²)<input id="fy" type="number" value="4200"></label>
+                <label data-i18n="bar">Bar diameter (mm)<input id="bar" type="number" value="19"></label>
+                <label data-i18n="spacing">Bar spacing (cm)<input id="spacing" type="number" value="15"></label>
+              </div>
+              <div class="actions"><button class="btn primary" onclick="calcBearingRC()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('bearing')" data-i18n="save">Save</button></div>
+              <div class="result" id="bearingOut"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="solver" id="settlement">
+          <div class="solverHead"><h3 data-i18n="settleT">Immediate Settlement</h3><p class="hint" data-i18n="settleH">Elastic settlement calculation for serviceability screening.</p></div>
+          <div class="solverBody"><div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><rect x="85" y="165" width="450" height="205" fill="#ead3a8"/><line x1="60" y1="165" x2="560" y2="165" stroke="#333" stroke-width="3"/><rect x="230" y="110" width="160" height="55" fill="#cfd8df" stroke="#333" stroke-width="3"/><path d="M205 205 C245 260 375 260 415 205" fill="none" stroke="#0b8290" stroke-width="5"/><line x1="310" y1="205" x2="310" y2="285" stroke="#0b8290" stroke-width="5"/><text x="330" y="250" fill="#0b8290" font-size="24">s</text></svg></div>
+          <div class="form"><div class="grid"><label data-i18n="Es">Soil modulus Es (MPa)<input id="Es" type="number" value="20"></label><label data-i18n="nu">Poisson ratio ν<input id="nu" type="number" value="0.3" step="0.01"></label><label data-i18n="If">Influence factor If<input id="If" type="number" value="1.1" step="0.01"></label><label data-i18n="allow">Allowable settlement (mm)<input id="allow" type="number" value="25"></label></div><div class="actions"><button class="btn primary" onclick="calcSettlement()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('settlement')" data-i18n="save">Save</button></div><div class="result" id="settleOut"></div></div></div>
+        </section>
+
+        <section class="solver" id="liquefaction">
+          <div class="solverHead"><h3 data-i18n="liqT">Liquefaction Screening</h3><p class="hint" data-i18n="liqH">CSR/CRR simplified triggering safety factor.</p></div>
+          <div class="solverBody"><div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><line x1="70" y1="90" x2="550" y2="90" stroke="#333" stroke-width="3"/><rect x="90" y="90" width="440" height="240" fill="#d8b986"/><path d="M145 150 L195 150 L195 125 L245 125 L245 150 L295 150 L295 125 L345 125" fill="none" stroke="#c94444" stroke-width="5"/><text x="370" y="143" fill="#c94444" font-size="22">PGA</text><line x1="120" y1="90" x2="120" y2="240" stroke="#0b8290" stroke-width="4"/><text x="88" y="170" fill="#0b8290" font-size="22">z</text></svg></div>
+          <div class="form"><div class="grid"><label>PGA (g)<input id="pga" type="number" value="0.25" step="0.01"></label><label>σv (kPa)<input id="sv" type="number" value="150"></label><label>σ'v (kPa)<input id="sve" type="number" value="90"></label><label>z (m)<input id="z" type="number" value="10"></label><label>CRR<input id="crr" type="number" value="0.18" step="0.01"></label></div><div class="actions"><button class="btn primary" onclick="calcLiq()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('liquefaction')" data-i18n="save">Save</button></div><div class="result" id="liqOut"></div></div></div>
+        </section>
+
+        <section class="solver" id="seepage">
+          <div class="solverHead"><h3 data-i18n="seepT">Seepage / Quick Condition</h3><p class="hint" data-i18n="seepH">Critical gradient and quick condition factor of safety.</p></div>
+          <div class="solverBody"><div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><rect x="95" y="120" width="160" height="110" fill="#9bd9f4"/><rect x="370" y="185" width="150" height="45" fill="#9bd9f4"/><rect x="105" y="230" width="400" height="90" fill="#d8b986"/><line x1="255" y1="160" x2="370" y2="205" stroke="#0b8290" stroke-width="5"/><text x="285" y="150" fill="#0b8290" font-size="22">Δh</text><line x1="125" y1="350" x2="480" y2="350" stroke="#c94444" stroke-width="4"/><text x="295" y="378" fill="#c94444" font-size="22">L</text></svg></div>
+          <div class="form"><div class="grid"><label>Gs<input id="Gs" type="number" value="2.65" step="0.01"></label><label>Void ratio e<input id="void" type="number" value="0.8" step="0.01"></label><label>Δh (m)<input id="dh" type="number" value="3"></label><label>L (m)<input id="flowL" type="number" value="8"></label></div><div class="actions"><button class="btn primary" onclick="calcSeep()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('seepage')" data-i18n="save">Save</button></div><div class="result" id="seepOut"></div></div></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results"><div class="container"><div class="kicker" data-i18n="resK">Saved results</div><h2 data-i18n="resT">Project calculation table</h2><div class="actions"><button class="btn primary" onclick="generateReport()" data-i18n="update">Update Report</button><button class="btn soft" onclick="downloadCSV()" data-i18n="csv">Download CSV</button><button class="btn white" onclick="clearCases()" data-i18n="clear">Clear</button></div><div class="tableWrap"><table id="caseTable"><thead><tr><th>#</th><th data-i18n="mod">Module</th><th data-i18n="out">Output</th><th data-i18n="stat">Status</th><th data-i18n="rec">Recommendation</th></tr></thead><tbody></tbody></table></div></div></section>
+
+<section class="section" id="report"><div class="container"><div class="kicker" data-i18n="repK">Report</div><h2 data-i18n="repT">Automatic preliminary engineering report</h2><div class="reportGrid"><div><textarea id="reportText" class="report"></textarea><div class="actions"><button class="btn primary" onclick="generateReport()" data-i18n="generate">Generate</button><button class="btn soft" onclick="copyReport()" data-i18n="copy">Copy</button><button class="btn white" onclick="downloadTXT()" data-i18n="txt">Download TXT</button></div></div><div class="labcard"><div class="labbody"><h3 data-i18n="upgradeT">Next-generation professional upgrade</h3><p class="lead" data-i18n="upgradeP">Future modules can add CPT/SPT correlations, borehole import, GIS risk maps, nonlinear site response, staged excavation, pile groups, and PDF calculation books.</p></div></div></div></div></section>
+
+<footer class="footer" data-i18n="footer">LABZero GeoCalc · Research · Innovation · Impact</footer>
+
 <script>
-const $=id=>document.getElementById(id),tfToKpa=98.0665,kpaToTf=1/98.0665;function buildLayers(){const n=parseInt($("nLayers").value),tbody=document.querySelector("#layerTable tbody");tbody.innerHTML="";for(let i=1;i<=n;i++){const tr=document.createElement("tr");tr.innerHTML=`<td style="background:#ffffcc">${i}</td><td><input value="${i===1?'D':'L'+i}"></td><td><select><option>D</option><option>CL</option><option>SM</option><option>SP</option><option>ML</option></select></td><td><input type="number" value="${i*3}" step="0.1"></td><td><input type="number" value="${i===1?'1.8':'1.9'}" step="0.01"></td><td><input type="number" value="${i===1?'1.0':'0.5'}" step="0.1"></td><td><input type="number" value="${i===1?'30':'32'}" step="0.1"></td><td class="gray"><input type="number" value="${i===1?'0':'0'}"></td><td><input type="number" value="${i===1?'15':'20'}"></td><td class="gray"><input type="number" value=""></td>`;tbody.appendChild(tr)}updateFigure()}function num(id){return parseFloat($(id).value)||0}function deg(x){return x*Math.PI/180}function fmt(x,d=2){return Number.isFinite(x)?x.toFixed(d):"N/A"}function currentLayerParams(){const first=document.querySelector("#layerTable tbody tr"),cells=first.querySelectorAll("input,select");return{code:cells[0].value,type:cells[1].value,depth:parseFloat(cells[2].value)||3,gamma_tf:parseFloat(cells[3].value)||1.8,c_tf:parseFloat(cells[4].value)||0,phi:parseFloat(cells[5].value)||30,su_tf:parseFloat(cells[6].value)||0,N:parseFloat(cells[7].value)||0}}function bearingFactors(phi){if(Math.abs(phi)<.01)return{Nc:5.14,Nq:1,Ng:0};const p=deg(phi),Nq=Math.exp(Math.PI*Math.tan(p))*Math.pow(Math.tan(Math.PI/4+p/2),2),Nc=(Nq-1)/Math.tan(p),Ng=2*(Nq+1)*Math.tan(p);return{Nc,Nq,Ng}}function shapeFactors(B,L){const method=$("factorMethod").value;if(method==="Terzaghi")return{sc:1,sq:1,sg:1};return{sc:1+.2*(B/L),sq:1+.1*(B/L),sg:Math.max(.6,1-.4*(B/L))}}function waterCorrection(gamma_tf,Df,Dw){if(Dw<=0)return Math.max(gamma_tf-1,.8);if(Dw>=Df)return gamma_tf;const ratio=Dw/Df;return gamma_tf*ratio+Math.max(gamma_tf-1,.8)*(1-ratio)}function layerModifier(){const m=document.querySelector("input[name='layerMethod']:checked").value;if(m==="none")return{m:1,note:"未考慮層狀地層修正。"};if(m==="punch")return{m:.85,note:"已用簡化穿剪模式折減承載力 15%。"};if(m==="soft")return{m:.75,note:"已用簡化荷重分散至軟弱層模式折減承載力 25%。"};return{m:.9,note:"已用平均參數模式折減承載力 10%。"}}function eccentricGeometry(){const Lx=num("Lx"),Ly=num("Ly"),use=$("eccCheck").checked;let ex=use?Math.abs(num("ex")):0,ey=use?Math.abs(num("ey")):0;const Beff=Math.max(Lx-2*ex,.01),Leff=Math.max(Ly-2*ey,.01);return{use,ex,ey,Beff,Leff,area:Beff*Leff}}function calculateAll(){const Df=num("Df"),Lx=num("Lx"),Ly=num("Ly"),Dw=num("Dw"),layer=currentLayerParams(),gammaEff_tf=waterCorrection(layer.gamma_tf,Df,Dw),gamma=gammaEff_tf*tfToKpa,c=layer.c_tf*tfToKpa,eg=eccentricGeometry(),Bcalc=Math.min(eg.Beff,eg.Leff),Lcalc=Math.max(eg.Beff,eg.Leff),N=bearingFactors(layer.phi),S=shapeFactors(Bcalc,Lcalc),LM=layerModifier(),q=gamma*Df;let qult=(c*N.Nc*S.sc+q*N.Nq*S.sq+.5*gamma*Bcalc*N.Ng*S.sg)*LM.m;const qallLong=qult/num("FSb1"),qallShort=qult/num("FSb2"),qallLimit=qult/num("FSb3"),P=num("Pload"),qApplied=eg.use?P/eg.area:P/(Lx*Ly),FSactual=qult/qApplied;let status="OK",cls="ok";if(FSactual<num("FSb2")){status="需複核";cls="warn"}if(FSactual<num("FSb3")){status="高風險";cls="bad"}$("resultBox").innerHTML=`<span class="status ${cls}">${status}</span>\n\n有效基礎尺寸：\nB' = ${fmt(Bcalc)} m, L' = ${fmt(Lcalc)} m, A' = ${fmt(eg.area)} m²\n\n承載力因數：\nNc = ${fmt(N.Nc)}, Nq = ${fmt(N.Nq)}, Nγ = ${fmt(N.Ng)}\n形狀修正：\nsc = ${fmt(S.sc)}, sq = ${fmt(S.sq)}, sγ = ${fmt(S.sg)}\n\n地下水修正後單位重：\nγeff = ${fmt(gammaEff_tf,3)} tf/m³\n\n極限承載力：\nqult = ${fmt(qult*kpaToTf,3)} tf/m² = ${fmt(qult)} kPa\n\n容許承載力：\n長期 qall = ${fmt(qallLong*kpaToTf,3)} tf/m²\n短期 qall = ${fmt(qallShort*kpaToTf,3)} tf/m²\n極限限界 qall = ${fmt(qallLimit*kpaToTf,3)} tf/m²\n\n作用壓力：\nqApplied = ${fmt(qApplied)} kPa\nFSactual = ${fmt(FSactual)}`;const tips=[];tips.push(LM.note);if(eg.use&&(eg.ex>Lx/6||eg.ey>Ly/6))tips.push("偏心距超過核心範圍 L/6，可能產生基底張力區，建議重新配置柱位或加大基腳。");if(Dw<Df)tips.push("地下水位位於基礎深度內，已進行單位重折減；建議複核浮力、施工排水與有效應力。");if(FSactual<num("FSb1"))tips.push("長期安全係數不足，建議加大基礎、增加埋置深度、地盤改良或改採樁基礎。");if(layer.N>0&&layer.N<10)tips.push("SPT-N 偏低，請注意沉陷量與局部軟弱層控制。");$("smartList").innerHTML=tips.map(x=>`<li>${x}</li>`).join("");updateFigure();generateReport()}function generateReport(){const now=new Date().toLocaleString();$("report").value=`單淺基礎承載力智慧分析計算書\n產生時間：${now}\n\n一、設計資訊\n計畫名稱：${$("projName").value}\n計畫編號：${$("projNo").value}\n設計人員：${$("designer").value}\n設計說明：${$("desc").value}\n\n二、基礎尺寸與條件\n基礎形式：${$("foundationType").value}\n規範：${$("code").value}\nDf = ${$("Df").value} m\nLx = ${$("Lx").value} m\nLy = ${$("Ly").value} m\nDw = ${$("Dw").value} m\n\n三、分析設定\n長期 FS = ${$("FSb1").value}\n短期 FS = ${$("FSb2").value}\n極限 FS = ${$("FSb3").value}\n承載力因數計算法：${$("factorMethod").value}\n考慮偏心：${$("eccCheck").checked?"是":"否"}\n\n四、計算結果\n${$("resultBox").innerText}\n\n五、智慧建議\n${$("smartList").innerText}\n\n六、工程注意事項\n本工具為初步設計、教育訓練與方案比較使用。正式設計應納入完整地質調查、沉陷分析、地下水、施工程序、偏心傾覆、滑動、地震影響及合格技師審查。`}function downloadReport(){generateReport();const blob=new Blob([$("report").value],{type:"text/plain;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="GeoMaster_single_footing_report.txt";a.click();URL.revokeObjectURL(a.href)}function updateFigure(){const Df=num("Df"),Dw=num("Dw"),Lx=num("Lx"),Ly=num("Ly");$("dfTxt").textContent=`Df=${fmt(Df,1)}m`;$("dwTxt").textContent=`Dw=${fmt(Dw,1)}m`;$("lxTxt").textContent=`Lx=${fmt(Lx,1)}m`;$("lyTxt").textContent=`Ly=${fmt(Ly,1)}m`;const waterY=55+Math.min(Math.max(Dw,0),4)*30;$("waterLine").setAttribute("y1",waterY);$("waterLine").setAttribute("y2",waterY);const w=Math.max(120,Math.min(300,Lx*80)),h=Math.max(80,Math.min(190,Ly*60));$("planFoot").setAttribute("width",w);$("planFoot").setAttribute("height",h)}function resetDemo(){$("Df").value=1.5;$("Lx").value=2;$("Ly").value=2;$("Dw").value=0;$("FSb1").value=3;$("FSb2").value=2;$("FSb3").value=1.1;$("eccCheck").checked=false;$("eccBox").style.display="none";buildLayers();calculateAll()}$("eccCheck").addEventListener("change",()=>{$("eccBox").style.display=$("eccCheck").checked?"block":"none";updateFigure()});document.addEventListener("input",e=>{if(["Df","Lx","Ly","Dw","Pload","ex","ey"].includes(e.target.id))updateFigure()});buildLayers();calculateAll();
+const T={
+en:{brandSub:"Soil Dynamics × Geo-Hazard Calculation",navMission:"Mission",navModules:"Modules",navWorkspace:"Workspace",navReport:"Report",eyebrow:"Analysis and Risk Mitigation for Geo-Hazards",heroTitle:"From soil failure to calculation-driven urban resilience.",heroLead:"A LABZero-style multilingual geotechnical calculation platform integrating field parameters, transparent theory, engineering checks, visual interpretation, and report-ready outputs.",start:"Start Calculation",reportBtn:"Generate Report",k1:"languages",k2:"calculation engines",k3:"engineering diagrams",k4:"exports",s1:"Foundation bearing",s2:"RC footing",s3:"Liquefaction",s4:"Seepage / uplift",s5:"Project report",missionK:"LABZero philosophy",missionT:"Theory × Practice × Worldwide impact.",missionP:"The interface follows the LABZero spirit: turn geotechnical mechanisms, site evidence, numerical thinking, and public-safety decisions into usable engineering intelligence.",p1:"Bearing & RC",p1p:"Foundation capacity and footing reinforcement.",p2:"Liquefaction",p2p:"CSR/CRR-based screening and mitigation notes.",p3:"Settlement",p3p:"Serviceability and deformation-focused design.",p4:"Seepage",p4p:"Quick condition, uplift, and hydraulic risk.",p5:"Reports",p5p:"Decision-oriented calculation summaries.",moduleK:"Calculation modules",moduleT:"World-class structure, practical engineering depth.",moduleP:"The current version includes fully working browser-based calculations. It is designed for preliminary design, teaching, proposal support, and project communication.",workK:"Workspace",workT:"Visual engineering calculation workspace",tool1:"Foundation bearing + RC footing",tool2:"Immediate settlement",tool3:"Liquefaction screening",tool4:"Seepage / quick condition",bearingT:"Foundation Bearing + RC Footing Design",bearingH:"Checks bearing capacity, eccentric effective area, RC flexure, one-way shear, punching shear, and reinforcement.",theory:"Theory",Lx:"Footing width Lx (m)",Ly:"Footing width Ly (m)",Df:"Foundation depth Df (m)",H:"Footing thickness H (m)",Cx:"Column width Cx (m)",Cy:"Column width Cy (m)",ex:"Eccentricity ex (m)",ey:"Eccentricity ey (m)",Pserv:"Service load P (tf)",Pult:"Ultimate load Pu (tf)",gamma:"Unit weight γ (tf/m³)",c:"Cohesion c' (tf/m²)",phi:"Friction angle φ' (deg)",Dw:"Groundwater depth Dw (m)",fc:"Concrete f'c (kgf/cm²)",fy:"Steel fy (kgf/cm²)",bar:"Bar diameter (mm)",spacing:"Bar spacing (cm)",calculate:"Calculate",save:"Save",settleT:"Immediate Settlement",settleH:"Elastic settlement calculation for serviceability screening.",Es:"Soil modulus Es (MPa)",nu:"Poisson ratio ν",If:"Influence factor If",allow:"Allowable settlement (mm)",liqT:"Liquefaction Screening",liqH:"CSR/CRR simplified triggering safety factor.",seepT:"Seepage / Quick Condition",seepH:"Critical gradient and quick condition factor of safety.",resK:"Saved results",resT:"Project calculation table",update:"Update Report",csv:"Download CSV",clear:"Clear",mod:"Module",out:"Output",stat:"Status",rec:"Recommendation",repK:"Report",repT:"Automatic preliminary engineering report",generate:"Generate",copy:"Copy",txt:"Download TXT",upgradeT:"Next-generation professional upgrade",upgradeP:"Future modules can add CPT/SPT correlations, borehole import, GIS risk maps, nonlinear site response, staged excavation, pile groups, and PDF calculation books.",footer:"LABZero GeoCalc · Research · Innovation · Impact"},
+zh:{brandSub:"土壤動力 × 地質災害計算",navMission:"使命",navModules:"模組",navWorkspace:"工作區",navReport:"報告",eyebrow:"地質災害分析與風險降低",heroTitle:"從土壤破壞到以計算驅動的城市韌性。",heroLead:"LABZero 風格多語地工計算平台，整合現地參數、透明理論、工程檢核、視覺化解讀與可輸出報告。",start:"開始計算",reportBtn:"產生報告",k1:"語言",k2:"計算引擎",k3:"工程圖示",k4:"輸出",s1:"基礎承載力",s2:"RC 基腳",s3:"液化",s4:"滲流 / 上浮",s5:"專案報告",missionK:"LABZero 精神",missionT:"理論 × 實務 × 世界影響力。",missionP:"介面承襲 LABZero 精神：將地工機制、現地證據、數值思維與公共安全決策轉化為可使用的工程智慧。",p1:"承載力與 RC",p1p:"基礎承載力與基腳配筋。",p2:"液化",p2p:"CSR/CRR 篩選與改良建議。",p3:"沉陷",p3p:"服務性與變形導向設計。",p4:"滲流",p4p:"快砂、上浮與水力風險。",p5:"報告",p5p:"決策導向計算摘要。",moduleK:"計算模組",moduleT:"世界級架構，實務工程深度。",moduleP:"目前版本包含可直接運作的瀏覽器計算，適用於初步設計、教學、提案與專案溝通。",workK:"工作區",workT:"視覺化工程計算工作區",tool1:"基礎承載力 + RC 基腳",tool2:"立即沉陷",tool3:"液化篩選",tool4:"滲流 / 快砂",bearingT:"基礎承載力 + RC 基腳設計",bearingH:"檢核承載力、偏心有效面積、RC 彎矩、單向剪力、沖切剪力與配筋。",theory:"理論",Lx:"基礎寬度 Lx (m)",Ly:"基礎寬度 Ly (m)",Df:"基礎深度 Df (m)",H:"基礎厚度 H (m)",Cx:"柱寬 Cx (m)",Cy:"柱寬 Cy (m)",ex:"偏心 ex (m)",ey:"偏心 ey (m)",Pserv:"服務載重 P (tf)",Pult:"極限載重 Pu (tf)",gamma:"單位重 γ (tf/m³)",c:"凝聚力 c' (tf/m²)",phi:"摩擦角 φ' (deg)",Dw:"地下水位深度 Dw (m)",fc:"混凝土 f'c (kgf/cm²)",fy:"鋼筋 fy (kgf/cm²)",bar:"鋼筋直徑 (mm)",spacing:"鋼筋間距 (cm)",calculate:"計算",save:"儲存",settleT:"立即沉陷",settleH:"服務性篩選用彈性沉陷計算。",Es:"土壤模數 Es (MPa)",nu:"柏松比 ν",If:"影響係數 If",allow:"容許沉陷 (mm)",liqT:"液化篩選",liqH:"CSR/CRR 簡化觸發安全係數。",seepT:"滲流 / 快砂條件",seepH:"臨界水力坡降與快砂安全係數。",resK:"儲存結果",resT:"專案計算表",update:"更新報告",csv:"下載 CSV",clear:"清除",mod:"模組",out:"輸出",stat:"狀態",rec:"建議",repK:"報告",repT:"自動初步工程報告",generate:"產生",copy:"複製",txt:"下載 TXT",upgradeT:"下一代專業升級",upgradeP:"未來可加入 CPT/SPT 相關式、鑽孔匯入、GIS 風險圖、非線性場址反應、分階開挖、群樁與 PDF 計算書。",footer:"LABZero GeoCalc · Research · Innovation · Impact"},
+ja:{brandSub:"土質動力学 × 地盤災害計算",navMission:"理念",navModules:"モジュール",navWorkspace:"ワークスペース",navReport:"レポート",eyebrow:"地盤災害の解析とリスク低減",heroTitle:"土の破壊から計算駆動型の都市レジリエンスへ。",heroLead:"LABZeroスタイルの多言語地盤計算プラットフォーム。現地パラメータ、透明な理論、設計照査、視覚的解釈、報告書出力を統合します。",start:"計算開始",reportBtn:"レポート作成",k1:"言語",k2:"計算エンジン",k3:"工学図",k4:"出力",s1:"基礎支持力",s2:"RCフーチング",s3:"液状化",s4:"浸透 / 揚圧",s5:"プロジェクト報告",missionK:"LABZeroの精神",missionT:"理論 × 実務 × 世界的インパクト。",missionP:"地盤メカニズム、現地証拠、数値的思考、公共安全の意思決定を実用的な工学知能に変換します。",p1:"支持力とRC",p1p:"基礎支持力と配筋。",p2:"液状化",p2p:"CSR/CRR判定と対策メモ。",p3:"沈下",p3p:"使用性と変形重視の設計。",p4:"浸透",p4p:"クイック条件、揚圧、水理リスク。",p5:"報告",p5p:"意思決定型の計算要約。",moduleK:"計算モジュール",moduleT:"世界水準の構成と実務的な深さ。",moduleP:"現在版はブラウザで動作する計算を搭載し、概略設計、教育、提案、プロジェクト説明に適します。",workK:"ワークスペース",workT:"視覚的工学計算ワークスペース",tool1:"基礎支持力 + RCフーチング",tool2:"即時沈下",tool3:"液状化判定",tool4:"浸透 / クイック条件",bearingT:"基礎支持力 + RCフーチング設計",bearingH:"支持力、偏心有効面積、曲げ、一方向せん断、パンチング、配筋を照査します。",theory:"理論",Lx:"基礎幅 Lx (m)",Ly:"基礎幅 Ly (m)",Df:"基礎深さ Df (m)",H:"基礎厚 H (m)",Cx:"柱幅 Cx (m)",Cy:"柱幅 Cy (m)",ex:"偏心 ex (m)",ey:"偏心 ey (m)",Pserv:"常時荷重 P (tf)",Pult:"終局荷重 Pu (tf)",gamma:"単位体積重量 γ (tf/m³)",c:"粘着力 c' (tf/m²)",phi:"摩擦角 φ' (deg)",Dw:"地下水位深さ Dw (m)",fc:"コンクリート f'c (kgf/cm²)",fy:"鉄筋 fy (kgf/cm²)",bar:"鉄筋径 (mm)",spacing:"鉄筋間隔 (cm)",calculate:"計算",save:"保存",settleT:"即時沈下",settleH:"使用性判定のための弾性沈下計算。",Es:"地盤変形係数 Es (MPa)",nu:"ポアソン比 ν",If:"影響係数 If",allow:"許容沈下量 (mm)",liqT:"液状化判定",liqH:"CSR/CRR簡易安全率。",seepT:"浸透 / クイック条件",seepH:"限界動水勾配と安全率。",resK:"保存結果",resT:"プロジェクト計算表",update:"レポート更新",csv:"CSV保存",clear:"消去",mod:"モジュール",out:"出力",stat:"状態",rec:"推奨",repK:"レポート",repT:"自動概略技術レポート",generate:"作成",copy:"コピー",txt:"TXT保存",upgradeT:"次世代専門版",upgradeP:"CPT/SPT相関、ボーリング取込、GISリスク図、非線形地盤応答、段階掘削、群杭、PDF計算書を追加できます。",footer:"LABZero GeoCalc · Research · Innovation · Impact"},
+vi:{brandSub:"Động lực đất × Tính toán tai biến địa kỹ thuật",navMission:"Sứ mệnh",navModules:"Mô-đun",navWorkspace:"Không gian",navReport:"Báo cáo",eyebrow:"Phân tích và giảm thiểu rủi ro địa tai biến",heroTitle:"Từ phá hoại đất đến khả năng chống chịu đô thị dựa trên tính toán.",heroLead:"Nền tảng tính toán địa kỹ thuật đa ngôn ngữ theo phong cách LABZero, tích hợp tham số hiện trường, lý thuyết minh bạch, kiểm tra kỹ thuật, diễn giải trực quan và báo cáo.",start:"Bắt đầu tính",reportBtn:"Tạo báo cáo",k1:"ngôn ngữ",k2:"bộ tính",k3:"sơ đồ kỹ thuật",k4:"xuất dữ liệu",s1:"Sức chịu tải móng",s2:"Móng BTCT",s3:"Hóa lỏng",s4:"Thấm / nổi",s5:"Báo cáo dự án",missionK:"Tinh thần LABZero",missionT:"Lý thuyết × Thực tiễn × Tác động toàn cầu.",missionP:"Giao diện chuyển cơ chế đất, chứng cứ hiện trường, tư duy số và quyết định an toàn công cộng thành trí tuệ kỹ thuật có thể sử dụng.",p1:"Sức chịu tải & BTCT",p1p:"Sức chịu tải móng và cốt thép.",p2:"Hóa lỏng",p2p:"Sàng lọc CSR/CRR và ghi chú giảm thiểu.",p3:"Lún",p3p:"Thiết kế theo trạng thái sử dụng và biến dạng.",p4:"Thấm",p4p:"Cát chảy, áp lực nâng và rủi ro thủy lực.",p5:"Báo cáo",p5p:"Tóm tắt tính toán định hướng quyết định.",moduleK:"Mô-đun tính toán",moduleT:"Cấu trúc đẳng cấp thế giới, chiều sâu thực hành.",moduleP:"Phiên bản hiện tại có các tính toán chạy trực tiếp trên trình duyệt, phù hợp thiết kế sơ bộ, giảng dạy, đề xuất và giao tiếp dự án.",workK:"Không gian",workT:"Không gian tính toán kỹ thuật trực quan",tool1:"Sức chịu tải + móng BTCT",tool2:"Lún tức thời",tool3:"Sàng lọc hóa lỏng",tool4:"Thấm / cát chảy",bearingT:"Sức chịu tải móng + thiết kế móng BTCT",bearingH:"Kiểm tra sức chịu tải, diện tích hữu hiệu do lệch tâm, uốn, cắt một phương, chọc thủng và cốt thép.",theory:"Lý thuyết",Lx:"Bề rộng móng Lx (m)",Ly:"Bề rộng móng Ly (m)",Df:"Chiều sâu móng Df (m)",H:"Chiều dày móng H (m)",Cx:"Bề rộng cột Cx (m)",Cy:"Bề rộng cột Cy (m)",ex:"Lệch tâm ex (m)",ey:"Lệch tâm ey (m)",Pserv:"Tải sử dụng P (tf)",Pult:"Tải cực hạn Pu (tf)",gamma:"Dung trọng γ (tf/m³)",c:"Lực dính c' (tf/m²)",phi:"Góc ma sát φ' (deg)",Dw:"Mực nước ngầm Dw (m)",fc:"Bê tông f'c (kgf/cm²)",fy:"Thép fy (kgf/cm²)",bar:"Đường kính thép (mm)",spacing:"Khoảng cách thép (cm)",calculate:"Tính",save:"Lưu",settleT:"Lún tức thời",settleH:"Tính lún đàn hồi cho kiểm tra sử dụng.",Es:"Mô đun đất Es (MPa)",nu:"Hệ số Poisson ν",If:"Hệ số ảnh hưởng If",allow:"Lún cho phép (mm)",liqT:"Sàng lọc hóa lỏng",liqH:"Hệ số an toàn đơn giản CSR/CRR.",seepT:"Thấm / cát chảy",seepH:"Gradient tới hạn và hệ số an toàn.",resK:"Kết quả đã lưu",resT:"Bảng tính dự án",update:"Cập nhật báo cáo",csv:"Tải CSV",clear:"Xóa",mod:"Mô-đun",out:"Đầu ra",stat:"Trạng thái",rec:"Khuyến nghị",repK:"Báo cáo",repT:"Báo cáo kỹ thuật sơ bộ tự động",generate:"Tạo",copy:"Sao chép",txt:"Tải TXT",upgradeT:"Nâng cấp chuyên nghiệp thế hệ mới",upgradeP:"Có thể thêm tương quan CPT/SPT, nhập hố khoan, bản đồ GIS, phản ứng nền phi tuyến, đào theo giai đoạn, nhóm cọc và báo cáo PDF.",footer:"LABZero GeoCalc · Research · Innovation · Impact"}
+};
+let lang="en", cases=[], last={};
+const $=id=>document.getElementById(id), n=id=>parseFloat($(id).value)||0, fmt=(x,d=2)=>Number.isFinite(x)?x.toFixed(d):"N/A", deg=x=>x*Math.PI/180;
+function setLang(l,b){lang=l;document.querySelectorAll(".lang button").forEach(x=>x.classList.remove("active"));b.classList.add("active");applyLang()}
+function applyLang(){document.querySelectorAll("[data-i18n]").forEach(el=>{let k=el.dataset.i18n;if(T[lang][k])el.textContent=T[lang][k]});generateReport()}
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+document.querySelectorAll(".tool").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".tool").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".solver").forEach(s=>s.classList.remove("active"));btn.classList.add("active");document.getElementById(btn.dataset.tool).classList.add("active")}));
+function bf(phi){if(Math.abs(phi)<.01)return{Nc:5.14,Nq:1,Ng:0};let p=deg(phi),Nq=Math.exp(Math.PI*Math.tan(p))*Math.pow(Math.tan(Math.PI/4+p/2),2),Nc=(Nq-1)/Math.tan(p),Ng=2*(Nq+1)*Math.tan(p);return{Nc,Nq,Ng}}
+function st(ok,rev=false){return ok?{t:"OK",c:"ok"}:rev?{t:"Review",c:"warn"}:{t:"NG",c:"bad"}}
+function drawBars(){let a=$("barsA"),b=$("barsB");a.innerHTML="";b.innerHTML="";let s=Math.max(12,Math.min(35,n("spacing")*1.4));for(let x=120;x<455;x+=s)a.innerHTML+=`<line x1="${x}" y1="305" x2="${x}" y2="455" stroke="#e00" stroke-width="2"/>`;for(let y=310;y<455;y+=s)b.innerHTML+=`<line x1="115" y1="${y}" x2="465" y2="${y}" stroke="#e07500" stroke-width="2"/>`; $("footDim").textContent=`Lx=${fmt(n("Lx"))}m, Ly=${fmt(n("Ly"))}m, H=${fmt(n("H"))}m`}
+function calcBearingRC(){
+ let Lx=n("Lx"),Ly=n("Ly"),Df=n("Df"),H=n("H"),Cx=n("Cx"),Cy=n("Cy"),ex=Math.abs(n("ex")),ey=Math.abs(n("ey")),Ps=n("Pserv"),Pu=n("Pult"),gamma=n("gamma"),c=n("cohesion"),phi=n("phi"),Dw=n("Dw"),fc=n("fc"),fy=n("fy"),bar=n("bar"),sp=n("spacing");
+ let Lxe=Math.max(Lx-2*ex,.05),Lye=Math.max(Ly-2*ey,.05),B=Math.min(Lxe,Lye),L=Math.max(Lxe,Lye),A=Lxe*Lye,N=bf(phi),gammaEff=Dw<Df?Math.max(gamma-1,.75):gamma,q=gammaEff*Df*98.0665;
+ let qult=(c*98.0665*N.Nc+q*N.Nq+.5*gammaEff*98.0665*B*N.Ng), qserv=Ps*98.0665/A, FS=qult/qserv;
+ let qu=Pu*98.0665/(Lx*Ly),d=Math.max(H-(7.5/100)-bar/2000,.05),lx=(Lx-Cx)/2,ly=(Ly-Cy)/2,mux=qu*ly*ly/2,muy=qu*lx*lx/2;
+ let As=(Math.PI*bar*bar/4)/100*(100/sp), Asx=mux*1e6/(.9*fy*0.0980665*.9*d*1000)*1e4/1000, Asy=muy*1e6/(.9*fy*0.0980665*.9*d*1000)*1e4/1000, Asmin=.0018*100*d*100, need=Math.max(Asx,Asy,Asmin);
+ let vu=qu*Math.max(Math.max(lx,ly)-d,0), vc=.17*Math.sqrt(fc*.0980665)*1000*d, bo=2*((Cx+d)+(Cy+d)),vp=qu*Math.max(Lx*Ly-(Cx+d)*(Cy+d),0),vcp=.33*Math.sqrt(fc*.0980665)*1000*bo*d;
+ let ok=FS>=3&&As>=need&&.75*vc>=vu&&.75*vcp>=vp, state=st(ok,FS>=2&&As>=0.8*need);
+ let rec=ok?"Proceed to detailed code review, anchorage, settlement, and constructability checks.":"Increase footing size/thickness, reduce eccentricity, improve soil, or increase reinforcement.";
+ $("bearingOut").innerHTML=`<span class="badge ${state.c}">${state.t}</span>
+
+B'=${fmt(Lxe)} m, L'=${fmt(Lye)} m, A'=${fmt(A)} m²
+Nc=${fmt(N.Nc)}, Nq=${fmt(N.Nq)}, Nγ=${fmt(N.Ng)}
+qult=${fmt(qult/98.0665,3)} tf/m²
+qservice=${fmt(qserv/98.0665,3)} tf/m²
+FS=${fmt(FS)}
+
+RC:
+qu=${fmt(qu/98.0665,3)} tf/m²
+Mux=${fmt(mux)} kN-m/m, Muy=${fmt(muy)} kN-m/m
+As required/provided=${fmt(need)} / ${fmt(As)} cm²/m
+One-way shear demand/capacity=${fmt(vu)} / ${fmt(.75*vc)} kN/m
+Punching demand/capacity=${fmt(vp)} / ${fmt(.75*vcp)} kN
+
+${rec}`;
+ drawBars(); last.bearing={module:T[lang].tool1,output:`FS=${fmt(FS)}, As=${fmt(As)} cm²/m, punching=${fmt(vp)}/${fmt(.75*vcp)} kN`,status:state.t,recommendation:rec}; return last.bearing;
+}
+function calcSettlement(){let P=n("Pserv")*98.0665,B=n("Lx"),A=Math.max((n("Lx")-2*Math.abs(n("ex")))*(n("Ly")-2*Math.abs(n("ey"))),.05),q=P/A,Es=n("Es")*1000,nu=n("nu"),If=n("If"),allow=n("allow"),s=q*B*(1-nu*nu)*If/Es*1000,FS=allow/s,state=st(s<=allow,FS>=.85),rec=s<=allow?"Settlement is within the selected allowable limit.":"Increase footing size, improve soil, or use deep foundation."; $("settleOut").innerHTML=`<span class="badge ${state.c}">${state.t}</span>\n\nSettlement=${fmt(s)} mm\nAllowable=${fmt(allow)} mm\nRatio=${fmt(FS)}\n\n${rec}`; last.settlement={module:T[lang].tool2,output:`s=${fmt(s)} mm`,status:state.t,recommendation:rec}; return last.settlement}
+function calcLiq(){let pga=n("pga"),sv=n("sv"),sve=n("sve"),z=n("z"),crr=n("crr"),rd=Math.max(.5,1-.00765*z),csr=.65*pga*(sv/sve)*rd,FS=crr/csr,state=st(FS>=1.2,FS>=1),rec=FS>=1.2?"Liquefaction triggering risk is low for preliminary screening.":"Use CPT/SPT/Vs-based CRR and consider ground improvement."; $("liqOut").innerHTML=`<span class="badge ${state.c}">${state.t}</span>\n\nrd=${fmt(rd,3)}\nCSR=${fmt(csr,3)}\nCRR=${fmt(crr,3)}\nFSliq=${fmt(FS)}\n\n${rec}`; last.liquefaction={module:T[lang].tool3,output:`FSliq=${fmt(FS)}`,status:state.t,recommendation:rec}; return last.liquefaction}
+function calcSeep(){let Gs=n("Gs"),e=n("void"),dh=n("dh"),L=n("flowL"),ic=(Gs-1)/(1+e),i=dh/L,FS=ic/i,state=st(FS>=2,FS>=1.2),rec=FS>=2?"Quick condition risk is low for the entered geometry.":"Review cutoff, flow length, filter, relief wells, and hydraulic control."; $("seepOut").innerHTML=`<span class="badge ${state.c}">${state.t}</span>\n\nicr=${fmt(ic,3)}\ni=${fmt(i,3)}\nFS=${fmt(FS)}\n\n${rec}`; last.seepage={module:T[lang].tool4,output:`FS=${fmt(FS)}`,status:state.t,recommendation:rec}; return last.seepage}
+function saveCase(k){let d=last[k]||({bearing:calcBearingRC,settlement:calcSettlement,liquefaction:calcLiq,seepage:calcSeep}[k]());cases.push(d);renderCases();generateReport();go("results")}
+function renderCases(){let tb=document.querySelector("#caseTable tbody");tb.innerHTML="";cases.forEach((c,i)=>tb.innerHTML+=`<tr><td>${i+1}</td><td>${c.module}</td><td>${c.output}</td><td>${c.status}</td><td>${c.recommendation}</td></tr>`)}
+function clearCases(){cases=[];renderCases();generateReport()}
+function generateReport(){let txt=`LABZero GeoCalc - Preliminary Geotechnical Engineering Report
+Language: ${lang}
+Date: ${new Date().toLocaleString()}
+
+1. Saved calculation results
+`; if(!cases.length)txt+="No saved cases yet. Calculate and save one or more modules.\n"; else cases.forEach((c,i)=>txt+=`\n${i+1}. ${c.module}\nOutput: ${c.output}\nStatus: ${c.status}\nRecommendation: ${c.recommendation}\n`); txt+=`\n2. Engineering note
+This platform supports preliminary design, education, and option comparison. Final design must use project-specific site investigation, code requirements, groundwater conditions, construction sequence, deformation checks, and qualified professional review.\n`; $("reportText").value=txt}
+function copyReport(){$("reportText").select();document.execCommand("copy")}
+function downloadTXT(){generateReport();let b=new Blob([$("reportText").value],{type:"text/plain;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="labzero_geocalc_report.txt";a.click();URL.revokeObjectURL(a.href)}
+function downloadCSV(){let rows=[["Module","Output","Status","Recommendation"],...cases.map(c=>[c.module,c.output,c.status,c.recommendation])];let csv=rows.map(r=>r.map(x=>`"${String(x).replaceAll('"','""')}"`).join(",")).join("\n"),b=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="labzero_geocalc_results.csv";a.click();URL.revokeObjectURL(a.href)}
+document.addEventListener("input",()=>drawBars());
+calcBearingRC();calcSettlement();calcLiq();calcSeep();generateReport();applyLang();
 </script>
 </body>
 </html>
-
