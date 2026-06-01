@@ -1,80 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>LABZero GeoCalc | Multilingual Geotechnical Calculation Platform</title>
-<meta name="description" content="LABZero-style multilingual geotechnical calculation website for foundation bearing capacity, RC footing design, settlement, liquefaction, seepage, and project reports." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LABZero GeoCalc | Multilingual Geotechnical Calculator</title>
 <style>
 :root{
-  --zero:#071a24; --zero2:#0d2c3a; --teal:#20c7b5; --cyan:#58e0ff; --gold:#e9b44c;
-  --ink:#10202d; --muted:#657789; --line:#dce8ef; --soft:#f4f9fb; --white:#fff;
-  --ok:#18a36b; --warn:#b87300; --bad:#cc4141; --shadow:0 22px 60px rgba(7,26,36,.18);
-  --r:24px;
+  --zero:#071a24;--zero2:#0d2c3a;--teal:#20c7b5;--cyan:#58e0ff;--gold:#e9b44c;
+  --ink:#10202d;--muted:#657789;--line:#dce8ef;--soft:#f4f9fb;--ok:#18a36b;--warn:#b87300;--bad:#cc4141;
+  --shadow:0 22px 60px rgba(7,26,36,.18);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#f4f8fb;color:var(--ink);font-family:Inter,"Segoe UI",Arial,"Microsoft JhengHei",sans-serif;line-height:1.58}
+body{margin:0;background:#f4f8fb;color:var(--ink);font-family:Inter,"Segoe UI",Arial,"Microsoft JhengHei",sans-serif;line-height:1.55}
 button,input,select,textarea{font:inherit}
 a{text-decoration:none;color:inherit}
-.top{
-  position:sticky;top:0;z-index:50;background:rgba(7,26,36,.92);backdrop-filter:blur(14px);
-  color:white;border-bottom:1px solid rgba(255,255,255,.1)
-}
-.nav{max-width:1280px;margin:auto;padding:14px 22px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+.top{position:sticky;top:0;z-index:50;background:rgba(7,26,36,.94);backdrop-filter:blur(14px);color:white;border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{max-width:1280px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;gap:12px;align-items:center;font-weight:950}
 .logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--teal),var(--cyan));display:grid;place-items:center;color:#06202a;font-weight:950}
 .brand small{display:block;color:#9bc0cc;font-weight:700;font-size:12px}
 .links{display:flex;gap:18px;color:#c8dce4;font-weight:800;font-size:14px}
-.lang{display:flex;gap:7px}
-.lang button{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:white;border-radius:999px;padding:8px 10px;font-weight:900;cursor:pointer}
-.lang button.active{background:var(--teal);color:#032029}
+.lang{display:flex;gap:7px}.lang button{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:white;border-radius:999px;padding:8px 10px;font-weight:900;cursor:pointer}.lang button.active{background:var(--teal);color:#032029}
 .btn{border:0;border-radius:999px;padding:12px 18px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .btn.primary{background:linear-gradient(135deg,var(--teal),#0aa3aa);color:#04191f;box-shadow:0 12px 28px rgba(32,199,181,.24)}
-.btn.dark{background:#0b2532;color:white}.btn.soft{background:#e7fbfb;color:#075861}.btn.white{background:white;color:#0c6270;border:1px solid var(--line)}
-.hero{
-  color:white;background:
-  radial-gradient(circle at 10% 18%,rgba(32,199,181,.32),transparent 28%),
-  radial-gradient(circle at 88% 8%,rgba(233,180,76,.18),transparent 25%),
-  linear-gradient(135deg,#071a24 0%,#0d2c3a 62%,#06131a 100%);
-  overflow:hidden
-}
-.hero .inner{max-width:1280px;margin:auto;padding:76px 22px 58px;display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center}
+.btn.soft{background:#e7fbfb;color:#075861}.btn.white{background:white;color:#0c6270;border:1px solid var(--line)}
+.hero{color:white;background:radial-gradient(circle at 10% 18%,rgba(32,199,181,.32),transparent 28%),radial-gradient(circle at 88% 8%,rgba(233,180,76,.18),transparent 25%),linear-gradient(135deg,#071a24,#0d2c3a 62%,#06131a)}
+.hero .inner{max-width:1280px;margin:auto;padding:70px 22px 54px;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
 .eyebrow{display:inline-flex;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);color:#cffff7;font-weight:950;font-size:13px}
-h1{font-size:58px;line-height:1.02;letter-spacing:-2px;margin:18px 0}
-.lead{font-size:19px;color:#c9dde4;max-width:780px;margin:0 0 26px}
-.heroActions{display:flex;gap:12px;flex-wrap:wrap}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
-.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:15px}
-.kpi b{display:block;font-size:25px;color:white}.kpi span{font-size:13px;color:#a9c5d0}
-.labcard{background:rgba(255,255,255,.96);color:var(--ink);border-radius:32px;box-shadow:var(--shadow);overflow:hidden}
-.labhead{height:48px;background:#eef7f8;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;padding:0 16px}
-.dot{width:10px;height:10px;border-radius:50%;background:#95aebb}
-.labbody{padding:20px}
-.status{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px;border:1px solid var(--line);border-radius:16px;margin:10px 0;background:#fbfdff}
-.badge{border-radius:999px;padding:5px 9px;font-size:12px;font-weight:950}
-.ok{background:#e1f6ec;color:var(--ok)}.warn{background:#fff0d2;color:var(--warn)}.bad{background:#ffe1e1;color:var(--bad)}
-.section{padding:54px 22px}.container{max-width:1280px;margin:auto}
-.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#0b8290;font-weight:950}
+h1{font-size:56px;line-height:1.02;letter-spacing:-2px;margin:18px 0}
+.lead{font-size:18px;color:#c9dde4;max-width:790px;margin:0 0 26px}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:15px}.kpi b{display:block;font-size:25px;color:white}.kpi span{font-size:13px;color:#a9c5d0}
+.labcard{background:rgba(255,255,255,.96);color:var(--ink);border-radius:32px;box-shadow:var(--shadow);overflow:hidden}.labhead{height:48px;background:#eef7f8;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;padding:0 16px}.dot{width:10px;height:10px;border-radius:50%;background:#95aebb}
+.labbody{padding:20px}.status{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px;border:1px solid var(--line);border-radius:16px;margin:10px 0;background:#fbfdff}
+.badge{border-radius:999px;padding:5px 9px;font-size:12px;font-weight:950}.ok{background:#e1f6ec;color:var(--ok)}.warn{background:#fff0d2;color:var(--warn)}.bad{background:#ffe1e1;color:var(--bad)}
+.section{padding:54px 22px}.container{max-width:1280px;margin:auto}.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#0b8290;font-weight:950}
 h2{font-size:40px;line-height:1.12;letter-spacing:-1px;margin:8px 0 14px}.section .lead{color:var(--muted)}
-.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.pillar{background:white;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 10px 28px rgba(7,26,36,.06)}
-.pillar .num{color:var(--teal);font-weight:950}.pillar h3{margin:8px 0 6px}.pillar p{color:var(--muted);font-size:14px;margin:0}
-.workspace{display:grid;grid-template-columns:310px 1fr;gap:20px;align-items:start}
-.tools{position:sticky;top:88px;background:white;border:1px solid var(--line);border-radius:26px;padding:14px;box-shadow:0 12px 34px rgba(7,26,36,.08)}
-.tool{width:100%;border:0;background:transparent;text-align:left;padding:13px 12px;border-radius:15px;font-weight:950;color:#2f4858;cursor:pointer;display:flex;justify-content:space-between}
-.tool.active{background:#e7fbfb;color:#06747a}
+.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.pillar{background:white;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 10px 28px rgba(7,26,36,.06)}.pillar .num{color:var(--teal);font-weight:950}.pillar h3{margin:8px 0 6px}.pillar p{color:var(--muted);font-size:14px;margin:0}
+.workspace{display:grid;grid-template-columns:310px 1fr;gap:20px;align-items:start}.tools{position:sticky;top:88px;background:white;border:1px solid var(--line);border-radius:26px;padding:14px;box-shadow:0 12px 34px rgba(7,26,36,.08)}
+.tool{width:100%;border:0;background:transparent;text-align:left;padding:13px 12px;border-radius:15px;font-weight:950;color:#2f4858;cursor:pointer;display:flex;justify-content:space-between}.tool.active{background:#e7fbfb;color:#06747a}
 .solver{display:none;background:white;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}.solver.active{display:block}
-.solverHead{padding:22px 24px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fff,#f7fbfc)}
-.solverHead h3{font-size:28px;margin:0 0 6px}.hint{margin:0;color:var(--muted);font-size:14px}
-.solverBody{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:22px}
-.diagram{background:#f8fbfd;border:1px solid var(--line);border-radius:22px;padding:16px}svg{width:100%;height:auto}
-.form{background:#fbfdff;border:1px solid var(--line);border-radius:22px;padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-label{font-size:13px;font-weight:950;color:#344a59}input,select,textarea{width:100%;margin-top:6px;padding:12px 13px;border:1px solid #d2e0e8;border-radius:13px;background:white;color:var(--ink)}
+.solverHead{padding:22px 24px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fff,#f7fbfc)}.solverHead h3{font-size:28px;margin:0 0 6px}.hint{margin:0;color:var(--muted);font-size:14px}
+.solverBody{display:grid;grid-template-columns:1fr 1.05fr;gap:22px;padding:22px}.diagram{background:#f8fbfd;border:1px solid var(--line);border-radius:22px;padding:16px}svg{width:100%;height:auto}
+.form{background:#fbfdff;border:1px solid var(--line);border-radius:22px;padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:block;font-size:13px;font-weight:950;color:#344a59}.field span{display:block;margin-bottom:6px}.field input,.field select{width:100%;display:block;margin-top:0;padding:11px 12px;border:1px solid #c9dbe5;border-radius:12px;background:white;color:var(--ink);min-height:44px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 4px}.result{margin-top:16px;background:#f5f9fb;border:1px solid var(--line);border-left:6px solid var(--teal);border-radius:18px;padding:16px;white-space:pre-wrap;min-height:135px}
 .theory{margin-top:16px;background:#fffaf1;border:1px solid #f0d7a5;border-radius:18px;padding:16px;font-size:14px}.theory code{display:block;background:white;border:1px solid #ead6ab;border-radius:12px;padding:10px;margin-top:8px;white-space:pre-wrap}
 .tableWrap{background:white;border:1px solid var(--line);border-radius:22px;padding:12px;overflow:auto}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;font-size:14px}th{background:#f3f8fb}
-.reportGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}textarea.report{min-height:360px;font-family:Consolas,monospace;font-size:13px}
+.reportGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}textarea.report{width:100%;min-height:360px;font-family:Consolas,monospace;font-size:13px;border:1px solid var(--line);border-radius:18px;padding:14px}
 .footer{background:#071a24;color:#9eb8c4;text-align:center;padding:34px 22px}
 @media(max-width:1100px){.links{display:none}.hero .inner,.workspace,.solverBody,.reportGrid{grid-template-columns:1fr}.tools{position:relative;top:auto}.pillars,.kpis{grid-template-columns:1fr 1fr}h1{font-size:42px}}
 @media(max-width:640px){.pillars,.kpis,.grid{grid-template-columns:1fr}.nav{flex-wrap:wrap}}
@@ -172,26 +146,27 @@ Mu = qu l² / 2
 As = Mu / (φ fy jd)
 One-way shear and punching shear are checked by simplified strength design.</code></div>
             </div>
+
             <div class="form">
               <div class="grid">
-                <label data-i18n="Lx">Footing width Lx (m)<input id="Lx" type="number" value="2.5" step="0.1"></label>
-                <label data-i18n="Ly">Footing width Ly (m)<input id="Ly" type="number" value="2.2" step="0.1"></label>
-                <label data-i18n="Df">Foundation depth Df (m)<input id="Df" type="number" value="1.5" step="0.1"></label>
-                <label data-i18n="H">Footing thickness H (m)<input id="H" type="number" value="0.6" step="0.05"></label>
-                <label data-i18n="Cx">Column width Cx (m)<input id="Cx" type="number" value="0.5" step="0.05"></label>
-                <label data-i18n="Cy">Column width Cy (m)<input id="Cy" type="number" value="0.5" step="0.05"></label>
-                <label data-i18n="ex">Eccentricity ex (m)<input id="ex" type="number" value="0.0" step="0.01"></label>
-                <label data-i18n="ey">Eccentricity ey (m)<input id="ey" type="number" value="0.0" step="0.01"></label>
-                <label data-i18n="Pserv">Service load P (tf)<input id="Pserv" type="number" value="80"></label>
-                <label data-i18n="Pult">Ultimate load Pu (tf)<input id="Pult" type="number" value="120"></label>
-                <label data-i18n="gamma">Unit weight γ (tf/m³)<input id="gamma" type="number" value="1.8" step="0.01"></label>
-                <label data-i18n="c">Cohesion c' (tf/m²)<input id="cohesion" type="number" value="1.0" step="0.1"></label>
-                <label data-i18n="phi">Friction angle φ' (deg)<input id="phi" type="number" value="30"></label>
-                <label data-i18n="Dw">Groundwater depth Dw (m)<input id="Dw" type="number" value="0" step="0.1"></label>
-                <label data-i18n="fc">Concrete f'c (kgf/cm²)<input id="fc" type="number" value="210"></label>
-                <label data-i18n="fy">Steel fy (kgf/cm²)<input id="fy" type="number" value="4200"></label>
-                <label data-i18n="bar">Bar diameter (mm)<input id="bar" type="number" value="19"></label>
-                <label data-i18n="spacing">Bar spacing (cm)<input id="spacing" type="number" value="15"></label>
+                <label class="field"><span data-i18n="Lx">Footing width Lx (m)</span><input id="Lx" type="number" value="2.5" step="0.1"></label>
+                <label class="field"><span data-i18n="Ly">Footing width Ly (m)</span><input id="Ly" type="number" value="2.2" step="0.1"></label>
+                <label class="field"><span data-i18n="Df">Foundation depth Df (m)</span><input id="Df" type="number" value="1.5" step="0.1"></label>
+                <label class="field"><span data-i18n="H">Footing thickness H (m)</span><input id="H" type="number" value="0.6" step="0.05"></label>
+                <label class="field"><span data-i18n="Cx">Column width Cx (m)</span><input id="Cx" type="number" value="0.5" step="0.05"></label>
+                <label class="field"><span data-i18n="Cy">Column width Cy (m)</span><input id="Cy" type="number" value="0.5" step="0.05"></label>
+                <label class="field"><span data-i18n="ex">Eccentricity ex (m)</span><input id="ex" type="number" value="0.0" step="0.01"></label>
+                <label class="field"><span data-i18n="ey">Eccentricity ey (m)</span><input id="ey" type="number" value="0.0" step="0.01"></label>
+                <label class="field"><span data-i18n="Pserv">Service load P (tf)</span><input id="Pserv" type="number" value="80"></label>
+                <label class="field"><span data-i18n="Pult">Ultimate load Pu (tf)</span><input id="Pult" type="number" value="120"></label>
+                <label class="field"><span data-i18n="gamma">Unit weight γ (tf/m³)</span><input id="gamma" type="number" value="1.8" step="0.01"></label>
+                <label class="field"><span data-i18n="c">Cohesion c' (tf/m²)</span><input id="cohesion" type="number" value="1.0" step="0.1"></label>
+                <label class="field"><span data-i18n="phi">Friction angle φ' (deg)</span><input id="phi" type="number" value="30"></label>
+                <label class="field"><span data-i18n="Dw">Groundwater depth Dw (m)</span><input id="Dw" type="number" value="0" step="0.1"></label>
+                <label class="field"><span data-i18n="fc">Concrete f'c (kgf/cm²)</span><input id="fc" type="number" value="210"></label>
+                <label class="field"><span data-i18n="fy">Steel fy (kgf/cm²)</span><input id="fy" type="number" value="4200"></label>
+                <label class="field"><span data-i18n="bar">Bar diameter (mm)</span><input id="bar" type="number" value="19"></label>
+                <label class="field"><span data-i18n="spacing">Bar spacing (cm)</span><input id="spacing" type="number" value="15"></label>
               </div>
               <div class="actions"><button class="btn primary" onclick="calcBearingRC()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('bearing')" data-i18n="save">Save</button></div>
               <div class="result" id="bearingOut"></div>
@@ -201,20 +176,42 @@ One-way shear and punching shear are checked by simplified strength design.</cod
 
         <section class="solver" id="settlement">
           <div class="solverHead"><h3 data-i18n="settleT">Immediate Settlement</h3><p class="hint" data-i18n="settleH">Elastic settlement calculation for serviceability screening.</p></div>
-          <div class="solverBody"><div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><rect x="85" y="165" width="450" height="205" fill="#ead3a8"/><line x1="60" y1="165" x2="560" y2="165" stroke="#333" stroke-width="3"/><rect x="230" y="110" width="160" height="55" fill="#cfd8df" stroke="#333" stroke-width="3"/><path d="M205 205 C245 260 375 260 415 205" fill="none" stroke="#0b8290" stroke-width="5"/><line x1="310" y1="205" x2="310" y2="285" stroke="#0b8290" stroke-width="5"/><text x="330" y="250" fill="#0b8290" font-size="24">s</text></svg></div>
-          <div class="form"><div class="grid"><label data-i18n="Es">Soil modulus Es (MPa)<input id="Es" type="number" value="20"></label><label data-i18n="nu">Poisson ratio ν<input id="nu" type="number" value="0.3" step="0.01"></label><label data-i18n="If">Influence factor If<input id="If" type="number" value="1.1" step="0.01"></label><label data-i18n="allow">Allowable settlement (mm)<input id="allow" type="number" value="25"></label></div><div class="actions"><button class="btn primary" onclick="calcSettlement()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('settlement')" data-i18n="save">Save</button></div><div class="result" id="settleOut"></div></div></div>
+          <div class="solverBody">
+            <div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><rect x="85" y="165" width="450" height="205" fill="#ead3a8"/><line x1="60" y1="165" x2="560" y2="165" stroke="#333" stroke-width="3"/><rect x="230" y="110" width="160" height="55" fill="#cfd8df" stroke="#333" stroke-width="3"/><path d="M205 205 C245 260 375 260 415 205" fill="none" stroke="#0b8290" stroke-width="5"/><line x1="310" y1="205" x2="310" y2="285" stroke="#0b8290" stroke-width="5"/><text x="330" y="250" fill="#0b8290" font-size="24">s</text></svg></div>
+            <div class="form"><div class="grid">
+              <label class="field"><span data-i18n="Es">Soil modulus Es (MPa)</span><input id="Es" type="number" value="20"></label>
+              <label class="field"><span data-i18n="nu">Poisson ratio ν</span><input id="nu" type="number" value="0.3" step="0.01"></label>
+              <label class="field"><span data-i18n="If">Influence factor If</span><input id="If" type="number" value="1.1" step="0.01"></label>
+              <label class="field"><span data-i18n="allow">Allowable settlement (mm)</span><input id="allow" type="number" value="25"></label>
+            </div><div class="actions"><button class="btn primary" onclick="calcSettlement()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('settlement')" data-i18n="save">Save</button></div><div class="result" id="settleOut"></div></div>
+          </div>
         </section>
 
         <section class="solver" id="liquefaction">
           <div class="solverHead"><h3 data-i18n="liqT">Liquefaction Screening</h3><p class="hint" data-i18n="liqH">CSR/CRR simplified triggering safety factor.</p></div>
-          <div class="solverBody"><div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><line x1="70" y1="90" x2="550" y2="90" stroke="#333" stroke-width="3"/><rect x="90" y="90" width="440" height="240" fill="#d8b986"/><path d="M145 150 L195 150 L195 125 L245 125 L245 150 L295 150 L295 125 L345 125" fill="none" stroke="#c94444" stroke-width="5"/><text x="370" y="143" fill="#c94444" font-size="22">PGA</text><line x1="120" y1="90" x2="120" y2="240" stroke="#0b8290" stroke-width="4"/><text x="88" y="170" fill="#0b8290" font-size="22">z</text></svg></div>
-          <div class="form"><div class="grid"><label>PGA (g)<input id="pga" type="number" value="0.25" step="0.01"></label><label>σv (kPa)<input id="sv" type="number" value="150"></label><label>σ'v (kPa)<input id="sve" type="number" value="90"></label><label>z (m)<input id="z" type="number" value="10"></label><label>CRR<input id="crr" type="number" value="0.18" step="0.01"></label></div><div class="actions"><button class="btn primary" onclick="calcLiq()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('liquefaction')" data-i18n="save">Save</button></div><div class="result" id="liqOut"></div></div></div>
+          <div class="solverBody">
+            <div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><line x1="70" y1="90" x2="550" y2="90" stroke="#333" stroke-width="3"/><rect x="90" y="90" width="440" height="240" fill="#d8b986"/><path d="M145 150 L195 150 L195 125 L245 125 L245 150 L295 150 L295 125 L345 125" fill="none" stroke="#c94444" stroke-width="5"/><text x="370" y="143" fill="#c94444" font-size="22">PGA</text><line x1="120" y1="90" x2="120" y2="240" stroke="#0b8290" stroke-width="4"/><text x="88" y="170" fill="#0b8290" font-size="22">z</text></svg></div>
+            <div class="form"><div class="grid">
+              <label class="field"><span>PGA (g)</span><input id="pga" type="number" value="0.25" step="0.01"></label>
+              <label class="field"><span>σv (kPa)</span><input id="sv" type="number" value="150"></label>
+              <label class="field"><span>σ'v (kPa)</span><input id="sve" type="number" value="90"></label>
+              <label class="field"><span>z (m)</span><input id="z" type="number" value="10"></label>
+              <label class="field"><span>CRR</span><input id="crr" type="number" value="0.18" step="0.01"></label>
+            </div><div class="actions"><button class="btn primary" onclick="calcLiq()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('liquefaction')" data-i18n="save">Save</button></div><div class="result" id="liqOut"></div></div>
+          </div>
         </section>
 
         <section class="solver" id="seepage">
           <div class="solverHead"><h3 data-i18n="seepT">Seepage / Quick Condition</h3><p class="hint" data-i18n="seepH">Critical gradient and quick condition factor of safety.</p></div>
-          <div class="solverBody"><div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><rect x="95" y="120" width="160" height="110" fill="#9bd9f4"/><rect x="370" y="185" width="150" height="45" fill="#9bd9f4"/><rect x="105" y="230" width="400" height="90" fill="#d8b986"/><line x1="255" y1="160" x2="370" y2="205" stroke="#0b8290" stroke-width="5"/><text x="285" y="150" fill="#0b8290" font-size="22">Δh</text><line x1="125" y1="350" x2="480" y2="350" stroke="#c94444" stroke-width="4"/><text x="295" y="378" fill="#c94444" font-size="22">L</text></svg></div>
-          <div class="form"><div class="grid"><label>Gs<input id="Gs" type="number" value="2.65" step="0.01"></label><label>Void ratio e<input id="void" type="number" value="0.8" step="0.01"></label><label>Δh (m)<input id="dh" type="number" value="3"></label><label>L (m)<input id="flowL" type="number" value="8"></label></div><div class="actions"><button class="btn primary" onclick="calcSeep()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('seepage')" data-i18n="save">Save</button></div><div class="result" id="seepOut"></div></div></div>
+          <div class="solverBody">
+            <div class="diagram"><svg viewBox="0 0 620 420"><rect width="620" height="420" fill="#f8fbfd"/><rect x="95" y="120" width="160" height="110" fill="#9bd9f4"/><rect x="370" y="185" width="150" height="45" fill="#9bd9f4"/><rect x="105" y="230" width="400" height="90" fill="#d8b986"/><line x1="255" y1="160" x2="370" y2="205" stroke="#0b8290" stroke-width="5"/><text x="285" y="150" fill="#0b8290" font-size="22">Δh</text><line x1="125" y1="350" x2="480" y2="350" stroke="#c94444" stroke-width="4"/><text x="295" y="378" fill="#c94444" font-size="22">L</text></svg></div>
+            <div class="form"><div class="grid">
+              <label class="field"><span>Gs</span><input id="Gs" type="number" value="2.65" step="0.01"></label>
+              <label class="field"><span>Void ratio e</span><input id="void" type="number" value="0.8" step="0.01"></label>
+              <label class="field"><span>Δh (m)</span><input id="dh" type="number" value="3"></label>
+              <label class="field"><span>L (m)</span><input id="flowL" type="number" value="8"></label>
+            </div><div class="actions"><button class="btn primary" onclick="calcSeep()" data-i18n="calculate">Calculate</button><button class="btn soft" onclick="saveCase('seepage')" data-i18n="save">Save</button></div><div class="result" id="seepOut"></div></div>
+          </div>
         </section>
       </div>
     </div>
@@ -245,7 +242,7 @@ function st(ok,rev=false){return ok?{t:"OK",c:"ok"}:rev?{t:"Review",c:"warn"}:{t
 function drawBars(){let a=$("barsA"),b=$("barsB");a.innerHTML="";b.innerHTML="";let s=Math.max(12,Math.min(35,n("spacing")*1.4));for(let x=120;x<455;x+=s)a.innerHTML+=`<line x1="${x}" y1="305" x2="${x}" y2="455" stroke="#e00" stroke-width="2"/>`;for(let y=310;y<455;y+=s)b.innerHTML+=`<line x1="115" y1="${y}" x2="465" y2="${y}" stroke="#e07500" stroke-width="2"/>`; $("footDim").textContent=`Lx=${fmt(n("Lx"))}m, Ly=${fmt(n("Ly"))}m, H=${fmt(n("H"))}m`}
 function calcBearingRC(){
  let Lx=n("Lx"),Ly=n("Ly"),Df=n("Df"),H=n("H"),Cx=n("Cx"),Cy=n("Cy"),ex=Math.abs(n("ex")),ey=Math.abs(n("ey")),Ps=n("Pserv"),Pu=n("Pult"),gamma=n("gamma"),c=n("cohesion"),phi=n("phi"),Dw=n("Dw"),fc=n("fc"),fy=n("fy"),bar=n("bar"),sp=n("spacing");
- let Lxe=Math.max(Lx-2*ex,.05),Lye=Math.max(Ly-2*ey,.05),B=Math.min(Lxe,Lye),L=Math.max(Lxe,Lye),A=Lxe*Lye,N=bf(phi),gammaEff=Dw<Df?Math.max(gamma-1,.75):gamma,q=gammaEff*Df*98.0665;
+ let Lxe=Math.max(Lx-2*ex,.05),Lye=Math.max(Ly-2*ey,.05),B=Math.min(Lxe,Lye),A=Lxe*Lye,N=bf(phi),gammaEff=Dw<Df?Math.max(gamma-1,.75):gamma,q=gammaEff*Df*98.0665;
  let qult=(c*98.0665*N.Nc+q*N.Nq+.5*gammaEff*98.0665*B*N.Ng), qserv=Ps*98.0665/A, FS=qult/qserv;
  let qu=Pu*98.0665/(Lx*Ly),d=Math.max(H-(7.5/100)-bar/2000,.05),lx=(Lx-Cx)/2,ly=(Ly-Cy)/2,mux=qu*ly*ly/2,muy=qu*lx*lx/2;
  let As=(Math.PI*bar*bar/4)/100*(100/sp), Asx=mux*1e6/(.9*fy*0.0980665*.9*d*1000)*1e4/1000, Asy=muy*1e6/(.9*fy*0.0980665*.9*d*1000)*1e4/1000, Asmin=.0018*100*d*100, need=Math.max(Asx,Asy,Asmin);
